@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
+
+body {
+    background-image: url(../images/waves.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    margin: auto;
+} 
+
+h1 {
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: #291a3a;
+}
+
+.btn {
+    padding: 5px;
+}
+
+button#clear-btn {
+    width: 100%;
+    margin-top: 15px;
+    font-size: x-small;
+    text-transform: uppercase;
+    opacity: 0.3;
+}
+
+button#clear-btn:hover {
+    color: #291a3a;
+    opacity: 1;
+}
+.btn.focus,
+.btn:focus{
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+}
+
+button:focus {
+    outline: 0;
+}
+
+.container {
+    margin: auto;
+    width: 500px;
+    position: relative;
+}
+
+.card {
+    max-width: 500px;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: #39264f 0px 20px 30px -10px;   
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.row {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 78%;
+    margin-right: 5px;
+}
+
+.btn-plus {
+    width: 15%;
+}
+
+.btn-add {
+    background-color: #724C9D;
+    border: 0;
+    border-radius: 3px;
+    padding: 6.5px;
+    color: white;
+    cursor:pointer;
+}
+
+.btn-add:hover {
+    background-color: #291a3a;
+    color: white;
+    border: 0;
+}
+
+.task-text {
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+del {
+  text-decoration: line-through;
+  color: #40285c;
+  font-style: italic;
+  opacity: 0.3;
+}
+
+
+.btn-done,
+.btn-edit,
+.btn-delete {
+    background-color: #724C9D;
+    color: white;
+    border: 0;
+}
+
+.btn-done:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+    background-color: #291a3a;
+    color: white;
+    border: 0;
+}
+
+.list-group-item {
+    padding: 0.3rem 0.3rem;
+}
+
+footer {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #5f3f83;
+    line-height: 90px;
+    bottom: 0;
+}
+
+a {
+    color:#40285c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0a070d;
+    text-decoration: none;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: #291a3a;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem #4b356482;
+}
+
+.form-control::placeholder {
+    opacity: 0.5;
+}
+
+button.swal2-confirm.swal2-styled {
+    background-color: #724C9D;
+    width: 115px;
+    border: 0;
+}
+
+.swal2-styled.swal2-confirm:focus {
+    box-shadow: 0 0 0 2px #724C9D;
+}
+
+.swal2-popup.swal2-modal.swal2-show  {
+    color: #291a3a;
+}
+
+.swal2-input:focus, .swal2-file:focus, .swal2-textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #724C9D;
+}
+
+
+@media only screen and (max-width: 950px) and (min-height: 300px) {
+    .container {
+       width: 95%; 
+       margin: auto;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+   
