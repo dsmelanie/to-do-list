@@ -16,7 +16,7 @@ function displayTasks() {
                 </button>
             <div class="task-text mr-auto">${task}</div>
             <div>
-                <button class="btn-edit btn btn-link" data-index="${index}" data-toggle="modal" data-target="#editModal">
+                <button class="btn-edit btn btn-link" data-index="${index}">
                         <i class="far fa-edit" style="pointer-events: none;"></i>
                 </button>
                 <button class="btn-delete btn btn-link" data-index="${index}">
