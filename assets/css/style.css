@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 
 body {
     background-image: url(../images/waves.svg);
@@ -6,14 +7,17 @@ body {
     background-size: cover;
     min-height: 100vh;
     margin: auto;
+    font-family: 'Coming Soon', cursive;    
+    font-size: 20px;
 } 
 
 h1 {
-    font-family: 'Waiting for the Sunrise', cursive;
-    font-size: 70px;
+    font-family: 'Rampart One', cursive;
+    font-size: 60px;
     font-weight: bold;
     text-align: center;
     color: #291a3a;
+    margin-bottom: 20px;
 }
 
 .btn {
@@ -44,17 +48,18 @@ button:focus {
 
 .container {
     margin: auto;
-    width: 500px;
-    position: relative;
+    width: 50%;
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .card {
-    max-width: 500px;
-    margin-top: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: #39264f 0px 20px 30px -10px;   
     background-color: white;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .card-body {
@@ -81,7 +86,7 @@ button:focus {
     background-color: #724C9D;
     border: 0;
     border-radius: 3px;
-    padding: 6.5px;
+    padding: 4px;
     color: white;
     cursor:pointer;
 }
@@ -94,7 +99,6 @@ button:focus {
 
 .task-text {
     margin-left: 5px;
-    font-size: 18px;
 }
 
 del {
@@ -127,12 +131,11 @@ del {
 
 footer {
     width: 100%;
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 12px;
     color: #5f3f83;
-    line-height: 90px;
-    bottom: 0;
+    margin-top: 20px;
 }
 
 a {
@@ -177,18 +180,32 @@ button.swal2-confirm.swal2-styled {
 }
 
 
-@media only screen and (max-width: 700px) and (min-height: 300px) {
+@media only screen and (max-width: 870px) and (min-height: 300px) {
     .container {
        width: 95%; 
        margin: auto;
     }
 
+    body {
+        font-size: 15px;
+        margin-top: 3em;
+    }
+
     h1 {
-        font-size: 50px;
+        font-size: 40px;
+    }
+
+    .btn {
+        padding: 2px;
+
     }
 
     .card {
         width: 100%;
+    }
+
+    .btn-add {
+        padding: 7px;
     }
 }
 
