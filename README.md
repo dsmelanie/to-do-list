@@ -16,11 +16,11 @@
 
 <br>
 
-![IMG](/assets/images/Demo%20to-do%20list.gif)
+![IMG](/assets/images/screenshot.png)
 
 ---
 
 ## 🖋️ | Author
 
-- Github - [@rdsmelanie](https://github.com/rdsmelanie)
+- GitHub - [@rdsmelanie](https://github.com/rdsmelanie)
 
