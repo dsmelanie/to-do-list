@@ -11,15 +11,15 @@ function displayTasks() {
     li.className = 'list-group-item';
     li.innerHTML = `
         <div class="d-flex flex-row justify-content-between align-items-center">
-                <button class="btn-done btn btn-link ${task.isDone ? 'btnIsDone' : ''}" data-index="${index}">
+                <button class="btn-done btn-sm btn-link ${task.isDone ? 'btnIsDone' : ''}" data-index="${index}">
                     <i class="fas fa-check" style="pointer-events: none;"></i>
                 </button>
-            <div class="task-text mr-auto ${task.isDone ? 'taskDone' : ''}">${task.text}</div>
+            <div class="task-text mr-auto ${task.isDone ? 'taskDone' : ''}">${task.text}&nbsp;</div>
             <div>
-                <button class="btn-edit btn btn-link" data-index="${index}">
+                <button class="btn-edit btn-sm btn-link" data-index="${index}">
                         <i class="far fa-edit" style="pointer-events: none;"></i>
                 </button>
-                <button class="btn-delete btn btn-link" data-index="${index}">
+                <button class="btn-delete btn-sm btn-link" data-index="${index}">
                         <i class="far fa-trash-alt" style="pointer-events: none;"></i>
                 </button>
             </div>

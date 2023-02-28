@@ -68,7 +68,7 @@ button:focus {
 
 .container {
     margin: auto;
-    width: 50%;
+    width: 70%;
     margin-top: 3em;
     display: flex;
     justify-content: center;
@@ -192,11 +192,16 @@ button.swal2-confirm.swal2-styled {
 
 .swal2-popup.swal2-modal.swal2-show  {
     color: #291a3a;
+    width: 60%;
 }
 
 .swal2-input:focus, .swal2-file:focus, .swal2-textarea:focus {
     outline: 0;
-    box-shadow: 0 0 0 2px #724C9D;
+    box-shadow: 0 0 0 2px #724C9D !important;
+}
+
+.swal2-title {
+    max-width: 100%;
 }
 
 
@@ -227,15 +232,10 @@ button.swal2-confirm.swal2-styled {
         font-size: 12px;
     }
 
-    /* .btn-add:hover,
-    .btn-done:hover,
-    .btn-edit:hover,
-    .btn-delete:hover {
-        background-color: none;
-        color: none;
-        transition: none;
-    } */
+    .swal2-popup.swal2-modal.swal2-show {
+        color: #291a3a;
+        width: 70%;
+        font-size: 10px;
+    }
 
 }
-
-   
