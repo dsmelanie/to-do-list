@@ -50,7 +50,7 @@ function addTask(e) {
 
 function deleteTask(index) {
   Swal.fire({
-    title: 'Êtes-vous sûr de vouloir supprimer cette tâche ?',
+    title: 'Supprimer cette tâche ?',
     showCancelButton: true,
     confirmButtonText: 'Supprimer',
     cancelButtonText: 'Annuler'
@@ -71,7 +71,7 @@ function editTask(index, newText) {
 
 function showEditPopup(index) {
   Swal.fire({
-    title: 'Modifier la tâche',
+    title: 'Modifier',
     input: 'text',
     inputValue: tasks[index].text,
     showCancelButton: true,

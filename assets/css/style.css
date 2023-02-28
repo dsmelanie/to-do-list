@@ -15,7 +15,6 @@ body {
     margin: auto;
     font-family: 'Coming Soon', cursive;    
     font-size: 18px;
-    padding-right: 15px;
 } 
 
 h1 {
@@ -31,16 +30,30 @@ h1 {
     padding: 5px;
 }
 
+i {
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.8rem;
+  }
+
 button#clear-btn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
     width: 100%;
     margin-top: 15px;
-    font-size: x-small;
+    font-size: 15px;
     text-transform: uppercase;
-    opacity: 0.3;
+    background-color: #724C9D;
+    border: 0;
+    border-radius: 3px;
+    padding: 8px;
+    color: white;
+    cursor:pointer;
 }
 
 button#clear-btn:hover {
-    color: #291a3a;
+    background-color: #291a3a;
+    color: white;
     opacity: 1;
 }
 .btn.focus,
@@ -81,7 +94,7 @@ button:focus {
 }
 
 .form {
-    width: 78%;
+    width: 76%;
     margin-right: 5px;
 }
 
@@ -96,12 +109,6 @@ button:focus {
     padding: 4px;
     color: white;
     cursor:pointer;
-}
-
-.btn-add:hover {
-    background-color: #291a3a;
-    color: white;
-    border: 0;
 }
 
 .task-text {
@@ -129,12 +136,13 @@ button:focus {
     border: 0;
 }
 
+.btn-add:hover,
 .btn-done:hover,
 .btn-edit:hover,
 .btn-delete:hover {
     background-color: #291a3a;
     color: white;
-    border: 0;
+    transition: background-color 0.5s ease;
 }
 
 .list-group-item {
@@ -200,16 +208,11 @@ button.swal2-confirm.swal2-styled {
 
     body {
         font-size: 14px;
-        margin-top: 3em;
+        margin-top: 3.5em;
     }
 
     h1 {
         font-size: 40px;
-    }
-
-    .btn {
-        padding: 2px;
-
     }
 
     .card {
@@ -219,6 +222,20 @@ button.swal2-confirm.swal2-styled {
     .btn-add {
         padding: 7px;
     }
+
+    button#clear-btn {
+        font-size: 12px;
+    }
+
+    /* .btn-add:hover,
+    .btn-done:hover,
+    .btn-edit:hover,
+    .btn-delete:hover {
+        background-color: none;
+        color: none;
+        transition: none;
+    } */
+
 }
 
    
