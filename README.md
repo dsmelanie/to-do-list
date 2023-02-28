@@ -16,7 +16,7 @@
 
 <br>
 
-![IMG](/assets/images/screenshot.png)
+![IMG](/assets/images/illustration.svg)
 
 ---
 
