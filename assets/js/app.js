@@ -115,8 +115,8 @@ taskForm.addEventListener('submit', (e) => {
 });
 
 taskForm.addEventListener('submit', addTask);
-displayTasks();
 
+displayTasks();
 
 function taskIsDone(index) {
   const taskItem = document.querySelectorAll('.list-group-item')[index];
@@ -132,10 +132,18 @@ function deleteTasksDone() {
     if (!taskItem.querySelector('.task-text').classList.contains('taskDone')) {
       uncompletedTasks.push(tasks[i]);
     }
-  }
-  tasks = uncompletedTasks;
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  displayTasks();
+  } Swal.fire({
+    title: 'Êtes-vous sûr de vouloir supprimer toutes les tâches accomplies ?',
+    showCancelButton: true,
+    confirmButtonText: 'Supprimer',
+    cancelButtonText: 'Annuler'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      tasks = uncompletedTasks;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      displayTasks();
+    }
+  });
 };
 
   
