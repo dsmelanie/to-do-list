@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 
-html {
-    overflow-y: hidden;
-}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+  
 
 body {
     background-image: url(../images/waves.svg);
@@ -13,6 +15,7 @@ body {
     margin: auto;
     font-family: 'Coming Soon', cursive;    
     font-size: 18px;
+    padding-right: 15px;
 } 
 
 h1 {
