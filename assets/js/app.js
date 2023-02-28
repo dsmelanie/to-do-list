@@ -99,7 +99,8 @@ taskList.addEventListener('click', (e) => {
     deleteTask(index);
   } else if (e.target.classList.contains('btn-done')) {
     const index = e.target.dataset.index;
-    toggleDoneTask(index);
+    taskIsDone(index);
+    e.target.classList.toggle('btnIsDone');
   }
 });
 
@@ -117,28 +118,25 @@ taskForm.addEventListener('submit', addTask);
 displayTasks();
 
 
-function toggleDoneTask(index) {
-    const taskText = tasks[index];
-    if (taskText.startsWith("<del>") && taskText.endsWith("</del>")) {
-      tasks[index] = taskText.substring(5, taskText.length - 6);
-    } else {
-      tasks[index] = `<del>${taskText}</del>`;
-    }
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    displayTasks();
-  }
+function taskIsDone(index) {
+  const taskItem = document.querySelectorAll('.list-group-item')[index];
+  taskItem.querySelector('.task-text').classList.toggle('taskDone');
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
-  function deleteTasksDone() {
-    const uncompletedTasks = [];
-  
-    for (let i = 0; i < tasks.length; i++) {
-      if (!tasks[i].includes("<del>")) {
-        uncompletedTasks.push(tasks[i]);
-      }
-    } 
-    tasks = uncompletedTasks;
-    localStorage.setItem("tasks", JSON.stringify(tasks)); 
-    displayTasks();
+function deleteTasksDone() {
+  const uncompletedTasks = [];
+
+  for (let i = 0; i < tasks.length; i++) {
+    const taskItem = document.querySelectorAll('.list-group-item')[i];
+    if (!taskItem.querySelector('.task-text').classList.contains('taskDone')) {
+      uncompletedTasks.push(tasks[i]);
+    }
   }
+  tasks = uncompletedTasks;
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  displayTasks();
+};
+
   
   

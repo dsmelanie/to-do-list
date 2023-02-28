@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 
+html {
+    overflow-y: hidden;
+}
+
 body {
     background-image: url(../images/waves.svg);
     background-repeat: no-repeat;
@@ -101,15 +105,20 @@ button:focus {
     margin-left: 5px;
 }
 
-del {
+.taskDone {
   text-decoration: line-through;
   color: #40285c;
   font-style: italic;
   opacity: 0.3;
 }
 
+.btn-done {
+    background-color: #cebae4;
+    color: white;
+    border: 0;
+}
 
-.btn-done,
+.btnIsDone,
 .btn-edit,
 .btn-delete {
     background-color: #724C9D;
