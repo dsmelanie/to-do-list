@@ -11,10 +11,10 @@ function displayTasks() {
     li.className = 'list-group-item';
     li.innerHTML = `
         <div class="d-flex flex-row justify-content-between align-items-center">
-                <button class="btn-done btn btn-link" data-index="${index}">
+                <button class="btn-done btn btn-link ${task.isDone ? 'btnIsDone' : ''}" data-index="${index}">
                     <i class="fas fa-check" style="pointer-events: none;"></i>
                 </button>
-            <div class="task-text mr-auto">${task}</div>
+            <div class="task-text mr-auto ${task.isDone ? 'taskDone' : ''}">${task.text}</div>
             <div>
                 <button class="btn-edit btn btn-link" data-index="${index}">
                         <i class="far fa-edit" style="pointer-events: none;"></i>
@@ -33,15 +33,16 @@ function addTask(e) {
   e.preventDefault();
   const taskText = taskInput.value.trim();
   if (taskText) {
-    if (tasks.includes(taskText)) {
+    if (tasks.find(task => task.text === taskText)) {
       Swal.fire({
         title: 'Oops...',
         text: 'Cette tâche existe déjà !',
       });
       return;
     }
-    tasks.push(taskText);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    const newTask = { text: taskText, isDone: false };
+    tasks.push(newTask);
+    saveTasks();
     taskInput.value = '';
     displayTasks();
   }
@@ -56,14 +57,14 @@ function deleteTask(index) {
   }).then((result) => {
     if (result.isConfirmed) {
       tasks.splice(index, 1);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      saveTasks();
       displayTasks();
     }
   })
 }
 
 function editTask(index, newText) {
-  tasks[index] = newText;
+  tasks[index].text = newText;
   saveTasks();
   displayTasks();
 }
@@ -72,7 +73,7 @@ function showEditPopup(index) {
   Swal.fire({
     title: 'Modifier la tâche',
     input: 'text',
-    inputValue: tasks[index],
+    inputValue: tasks[index].text,
     showCancelButton: true,
     confirmButtonText: 'Enregistrer',
     cancelButtonText: 'Annuler'
@@ -90,6 +91,10 @@ function saveTasks() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+function loadTasks() {
+  tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+}
+
 taskList.addEventListener('click', (e) => {
   if (e.target.classList.contains('btn-edit')) {
     const index = e.target.dataset.index;
@@ -101,6 +106,8 @@ taskList.addEventListener('click', (e) => {
     const index = e.target.dataset.index;
     taskIsDone(index);
     e.target.classList.toggle('btnIsDone');
+    tasks[index].isDone = !tasks[index].isDone;
+    saveTasks();
   }
 });
 
@@ -121,18 +128,19 @@ displayTasks();
 function taskIsDone(index) {
   const taskItem = document.querySelectorAll('.list-group-item')[index];
   taskItem.querySelector('.task-text').classList.toggle('taskDone');
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-};
+  saveTasks();
+}
 
 function deleteTasksDone() {
   const uncompletedTasks = [];
 
   for (let i = 0; i < tasks.length; i++) {
-    const taskItem = document.querySelectorAll('.list-group-item')[i];
-    if (!taskItem.querySelector('.task-text').classList.contains('taskDone')) {
+    if (!tasks[i].isDone) {
       uncompletedTasks.push(tasks[i]);
     }
-  } Swal.fire({
+  }
+
+  Swal.fire({
     title: 'Êtes-vous sûr de vouloir supprimer toutes les tâches accomplies ?',
     showCancelButton: true,
     confirmButtonText: 'Supprimer',
@@ -140,11 +148,10 @@ function deleteTasksDone() {
   }).then((result) => {
     if (result.isConfirmed) {
       tasks = uncompletedTasks;
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+      saveTasks();
       displayTasks();
     }
   });
 };
 
-  
-  
+window.addEventListener('load', loadTasks);
