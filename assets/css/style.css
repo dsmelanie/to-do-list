@@ -51,11 +51,9 @@ button#clear-btn {
     cursor:pointer;
 }
 
-/* button#clear-btn:hover {
-    background-color: #291a3a;
+button#clear-btn:hover {
     color: white;
-    opacity: 1;
-} */
+}
 
 .btn.focus,
 .btn:focus{
@@ -137,14 +135,12 @@ button:focus {
     border: 0;
 }
 
-/* .btn-add:hover,
+.btn-add:hover,
 .btn-done:hover,
 .btn-edit:hover,
 .btn-delete:hover {
-    background-color: #291a3a;
     color: white;
-    transition: background-color 0.5s ease;
-} */
+}
 
 .list-group-item {
     padding: 0.3rem 0.3rem;
