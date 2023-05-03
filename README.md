@@ -3,7 +3,7 @@
 
 ## 🖱️ | Link
 
-- Live Site URL : [Click](https://rdsmelanie.github.io/to-do-list)
+- Live Site URL : [Click](https://dsmelanie.github.io/to-do-list)
 
 ---
 
@@ -17,5 +17,5 @@
 
 ## 🖋️ | Author
 
-- GitHub - [@rdsmelanie](https://github.com/rdsmelanie)
+- GitHub - [@dsmelanie](https://github.com/dsmelanie)
 
